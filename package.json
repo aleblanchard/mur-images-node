@@ -1,0 +1,18 @@
+{
+  "name": "mur-images-node",
+  "version": "2.0.0",
+  "description": "Mur d'images avec commentaires, comptes et likes : serveur HTTP Node.js sans framework et base PostgreSQL",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "init-db": "node scripts/init-db.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
+}

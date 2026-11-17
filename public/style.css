@@ -1,0 +1,89 @@
+/* Mur d'images — feuille de style (chapitre 3) */
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #222;
+    background: #f6f6f4;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+header .accueil { font-weight: bold; color: #222; text-decoration: none; }
+
+/* Liens de compte en haut à droite (chapitre 10) */
+.compte { text-align: right; font-size: 0.95em; }
+
+main { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+a { color: #1d5fa8; }
+
+.bouton {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #1d5fa8;
+    color: #fff;
+    text-decoration: none;
+}
+.bouton:hover { background: #164a83; }
+
+/* Accueil */
+.logo img { width: 120px; margin-top: 10px; }
+.bienvenue { font-size: 1.2em; font-weight: bold; }
+.bandeau { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.bandeau img { width: 200px; height: 140px; object-fit: cover; border-radius: 6px; }
+
+/* Mur d'images : 5 colonnes sur grand écran, 3 sur écran moyen, 1 sur petit écran */
+.mur { column-gap: 12px; }
+.mur figure { break-inside: avoid; margin: 0 0 12px; }
+.mur img { display: block; width: 100%; border-radius: 6px; }
+.mur figcaption { font-size: 0.9em; padding: 4px 0; }
+
+@media screen and (max-width: 599px)                          { .mur { column-count: 1; } }
+@media screen and (min-width: 600px) and (max-width: 1199px)  { .mur { column-count: 3; } }
+@media screen and (min-width: 1200px)                         { .mur { column-count: 5; } }
+
+.like, .liked { margin-left: 6px; font-weight: bold; }
+.liked { color: #c62828; }
+.info { color: #555; }
+
+/* Page d'une image */
+.meta { color: #555; }
+.grande img { max-width: 100%; height: auto; cursor: zoom-in; border-radius: 6px; }
+.commentaires { max-width: 600px; margin: 20px auto; text-align: left; }
+.commentaires ul { padding-left: 20px; }
+.commentaires .vide { color: #777; list-style: none; margin-left: -20px; }
+.commentaires form, .compte-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+textarea, input { font: inherit; padding: 6px; }
+button {
+    font: inherit;
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 6px;
+    background: #1d5fa8;
+    color: #fff;
+    cursor: pointer;
+}
+button:disabled { background: #aaa; cursor: not-allowed; }
+
+.voisines { display: flex; justify-content: space-between; }
+.voisines img { width: 150px; border-radius: 6px; }
+
+/* Formulaires de compte */
+.compte-form { max-width: 360px; margin: 0 auto; text-align: left; }
+.erreur { color: #c62828; font-weight: bold; }
